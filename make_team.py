@@ -44,8 +44,10 @@ async def on_message(message):
         await client.send_message(message.channel,user)
         
     elif message.content.startswith('/command'):
-        reply = '出題者決め：『/que』、チーム分け：『/team␣〇␣△』 （〇、△には人数比）、ボイスチャットのメンバー表示：『/member』、使用可能なコマンド確認：『/command』'
-        await client.send_message(message.channel,reply)
+        await client.send_message(message.channel,'出題者決め：『/que』')
+        await client.send_message(message.channel,'チーム分け：『/team␣〇␣△』 （〇、△には人数比）')
+        await client.send_message(message.channel,'ボイスチャットのメンバー表示：『/member』')
+        await client.send_message(message.channel,'使用可能なコマンド確認：『/command』')
         
         
 def command(message,n):
