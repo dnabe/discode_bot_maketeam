@@ -13,7 +13,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('/role'):
         user = [member.display_name for member in client.get_all_members()]
-        q = user[randrange(0,len(user))]
+        #q = user[randrange(0,len(user))]
         reply = '出題者は' #+ str(q)
             
         await client.send_message(message.channel, reply)
