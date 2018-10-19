@@ -1,4 +1,5 @@
 import discord # インストールした discord.py
+import random
 
 client = discord.Client() # 接続に使用するオブジェクト
 
@@ -6,13 +7,17 @@ client = discord.Client() # 接続に使用するオブジェクト
 @client.event
 async def on_ready():
     print('ログインしました')
+    user = [member.display_name for member in client.get_all_members()]
 
-# 「/neko」と発言したら「にゃーん」が返る処理
+# メッセージによる処理
 @client.event
 async def on_message(message):
-    if message.content.startswith('/neko'):
-        reply = 'にゃーん'
+    if message.content.startswith('/role'):
+        q = user[randrange(0,len(user))]
+        reply = '出題者は' + str(q)
+            
         await client.send_message(message.channel, reply)
+    
 
 # botの接続と起動
 # （tokenにはbotアカウントのアクセストークンを入れてください）
