@@ -46,4 +46,4 @@ def command(message,n):
 
 # botの接続と起動
 # （tokenにはbotアカウントのアクセストークンを入れてください）
-client.run('NTAyNjYzMzA1NjY0NjU5NDc3.DqrSDw.7MLkjJ3dW0-7BFN3yijFGAFUxYU')
+client.run('NTAyNjYzMzA1NjY0NjU5NDc3.DquIqw.Y47wNQ52eGp1mIsZMhKQBu2BEno')
