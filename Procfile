@@ -1,1 +1,1 @@
-bot: pytthon discordbot.py
+bot: pytthon make_team.py
