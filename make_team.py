@@ -12,7 +12,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith('/role'):
-        user = [member.display_name for member in client.get_channel("502664510193139773")]
+        channel = client.get_channel("502664510193139773")
+        user = [channel.voice_members for member in client.get_channel("502664510193139773")]
         q = user[random.randrange(0,len(user))]
         reply = '出題者は' + str(q)
             
