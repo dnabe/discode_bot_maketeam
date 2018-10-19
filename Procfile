@@ -1,1 +1,1 @@
-bot: pytthon make_team.py
+bot: python make_team.py
