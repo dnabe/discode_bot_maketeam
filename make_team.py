@@ -15,8 +15,6 @@ async def on_message(message):
     cmd_1 = command(message.content,0)
     red_team = command(message.content,1)
     blue_team = command(message.content,2)
-    l = len(user)
-    num_team = list_team()
     list_red = []
     list_blue = []
     
@@ -27,15 +25,23 @@ async def on_message(message):
             
         await client.send_message(message.channel, reply)
     
-    elif cmd_1 == '/team'
+    elif cmd_1 == '/team':
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
-        for i in range(int(red_team)):
-            list_red[i] = user[random.randrange(0,len(user))]
-            user.remove(list_red[i])
+        l = len(user)
+        for i in range(l):
+            re = user[random.randrange(0,len(user))]
+            list_red += [re]
+            user.remove(re)
         list_blue = user
-        reply = red_team + 'vs' + blue_team
             
-        await client.send_message(message.channel,reply)
+        await client.send_message(message.channel,'赤チームは')
+        await client.send_message(message.channel,list_red)
+        await client.send_message(message.channel,'青チームは')
+        await client.send_message(message.channel,list_blue)
+    
+    elif message.content.startswith('/member'):
+        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
+        await client.send_message(message.channel,user)
         
 def command(message,n):
     try:
