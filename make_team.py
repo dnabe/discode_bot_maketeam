@@ -7,12 +7,12 @@ client = discord.Client() # 接続に使用するオブジェクト
 @client.event
 async def on_ready():
     print('ログインしました')
-    user = [member.display_name for member in client.get_all_members()]
 
 # メッセージによる処理
 @client.event
 async def on_message(message):
     if message.content.startswith('/role'):
+        user = [member.display_name for member in client.get_all_members()]
         q = user[randrange(0,len(user))]
         reply = '出題者は' + str(q)
             
