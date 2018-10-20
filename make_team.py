@@ -7,8 +7,6 @@ client = discord.Client() # 接続に使用するオブジェクト
 @client.event
 async def on_ready():
     print('ログインしました')
-    point_red = 0
-    point_blue = 0
 
 # メッセージによる処理
 @client.event
