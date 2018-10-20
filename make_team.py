@@ -18,6 +18,7 @@ async def on_message(message):
     list_red = []
     list_blue = []
     
+    
     if message.content.startswith('/que'):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         q = user[random.randrange(0,len(user))]
@@ -44,7 +45,12 @@ async def on_message(message):
         await client.send_message(message.channel,user)
         
     elif cmd_1 == '/win':
-        
+        if point_red != 0:
+            if not (type(point_red) is int):
+                point_red = 0
+        if point_blue != 0:
+            if not (type(point_blue) is int):
+                point_blue = 0
         if cmd_2 == 'red':
             point_red += int(cmd_3)
         elif cmd_2 == 'blue':
