@@ -54,12 +54,12 @@ async def on_message(message):
             
         reply = '赤チーム ： ' + str(point_red) + '    青チーム ： ' + str(point_blue)
         
-        await client.send_message(message.cannel,reply)
+        await client.send_message(message.channel,reply)
         
     elif message.content.startswith('/reset'):
         point_red = 0
         point_blue = 0
-        await client.send_message(message.cannel,'ポイントをリセットしたよ！')
+        await client.send_message(message.channel,'ポイントをリセットしたよ！')
         
     elif message.content.startswith('/command'):
         await client.send_message(message.channel,'出題者決め：『/que』')
