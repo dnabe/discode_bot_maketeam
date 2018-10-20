@@ -13,10 +13,12 @@ async def on_ready():
 async def on_message(message):
     
     cmd_1 = command(message.content,0)
-    red_team = command(message.content,1)
-    blue_team = command(message.content,2)
+    cmd_2 = command(message.content,1)
+    cmd_3 = command(message.content,2)
     list_red = []
     list_blue = []
+    point_red = 0
+    point_blue = 0
     
     if message.content.startswith('/que'):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
@@ -27,8 +29,8 @@ async def on_message(message):
     
     elif cmd_1 == '/team':
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
-        l = len(user)
-        for i in range(l):
+        
+        for i in range(int(cmd_2)):
             re = user[random.randrange(0,len(user))]
             list_red += [re]
             user.remove(re)
@@ -43,10 +45,28 @@ async def on_message(message):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         await client.send_message(message.channel,user)
         
+    elif cmd_1 == '/win':
+        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
+        if cmd_2 == 'red':
+            point_red += int(cmd_3)
+        elif cmd_2 == 'blue':
+            point_blue += int(cmd_3)
+            
+        reply = '赤チーム ： ' + str(point_red) + '青チーム ： ' + str(point_blue)
+        
+        await client.send_message(message.cannel,reply)
+        
+    elif message.content.startswith('/reset'):
+        point_red = 0
+        point_blue = 0
+        await client.send_message(message.cannel,'ポイントをリセットしたよ！')
+        
     elif message.content.startswith('/command'):
         await client.send_message(message.channel,'出題者決め：『/que』')
         await client.send_message(message.channel,'チーム分け：『/team␣〇␣△』 （〇、△には人数比）')
         await client.send_message(message.channel,'ボイスチャットのメンバー表示：『/member』')
+        await client.send_message(message.channel,'チームへポイントの加算：『/win red 〇』 （〇は点数）')
+        await client.send_message(message.channel,'ポイントのリセット：『/reset』')
         await client.send_message(message.channel,'使用可能なコマンド確認：『/command』')
         
         
