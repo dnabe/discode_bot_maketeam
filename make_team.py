@@ -52,7 +52,7 @@ async def on_message(message):
         elif cmd_2 == 'blue':
             point_blue += int(cmd_3)
             
-        reply = '赤チーム ： ' + str(point_red) + '青チーム ： ' + str(point_blue)
+        reply = '赤チーム ： ' + str(point_red) + '    青チーム ： ' + str(point_blue)
         
         await client.send_message(message.cannel,reply)
         
