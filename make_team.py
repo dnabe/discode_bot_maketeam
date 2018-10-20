@@ -7,6 +7,8 @@ client = discord.Client() # 接続に使用するオブジェクト
 @client.event
 async def on_ready():
     print('ログインしました')
+    point_red = 0
+    point_blue = 0
 
 # メッセージによる処理
 @client.event
@@ -17,8 +19,6 @@ async def on_message(message):
     cmd_3 = command(message.content,2)
     list_red = []
     list_blue = []
-    point_red = 0
-    point_blue = 0
     
     if message.content.startswith('/que'):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
