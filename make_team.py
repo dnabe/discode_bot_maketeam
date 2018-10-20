@@ -44,33 +44,28 @@ async def on_message(message):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         await client.send_message(message.channel,user)
         
-    elif cmd_1 == '/win':
-        if point_red != 0:
-            if not (type(point_red) is int):
-                point_red = 0
-        if point_blue != 0:
-            if not (type(point_blue) is int):
-                point_blue = 0
-        if cmd_2 == 'red':
-            point_red += int(cmd_3)
-        elif cmd_2 == 'blue':
-            point_blue += int(cmd_3)
+    #elif cmd_1 == '/win':
+        
+        #if cmd_2 == 'red':
+            #point_red += int(cmd_3)
+        #elif cmd_2 == 'blue':
+            #point_blue += int(cmd_3)
             
-        reply = '赤チーム ： ' + str(point_red) + '    青チーム ： ' + str(point_blue)
+        #reply = '赤チーム ： ' + str(point_red) + '    青チーム ： ' + str(point_blue)
         
-        await client.send_message(message.channel,reply)
+        #await client.send_message(message.channel,reply)
         
-    elif message.content.startswith('/reset'):
-        point_red = 0
-        point_blue = 0
-        await client.send_message(message.channel,'ポイントをリセットしたよ！')
+    #elif message.content.startswith('/reset'):
+        #point_red = 0
+        #point_blue = 0
+        #await client.send_message(message.channel,'ポイントをリセットしたよ！')
         
     elif message.content.startswith('/command'):
         await client.send_message(message.channel,'出題者決め：『/que』')
         await client.send_message(message.channel,'チーム分け：『/team␣〇␣△』 （〇、△には人数比）')
         await client.send_message(message.channel,'ボイスチャットのメンバー表示：『/member』')
-        await client.send_message(message.channel,'チームへポイントの加算：『/win red 〇』 （〇は点数）')
-        await client.send_message(message.channel,'ポイントのリセット：『/reset』')
+        #await client.send_message(message.channel,'チームへポイントの加算：『/win␣red␣〇』 （〇は点数）')
+        #await client.send_message(message.channel,'ポイントのリセット：『/reset』')
         await client.send_message(message.channel,'使用可能なコマンド確認：『/command』')
         
         
