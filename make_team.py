@@ -47,6 +47,7 @@ async def on_message(message):
     elif message.content.startswith('/member'):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         await client.send_message(message.channel,user)
+        await client.send_message(message.channel,str(len(user)) + '人')
         
     elif '/' in message.content and 'd' in message.content and not message.content.startswith('/command'):
         ms = message.content.split('d')[0]
