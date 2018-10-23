@@ -17,6 +17,7 @@ async def on_message(message):
     cmd_3 = command(message.content,2)
     list_red = []
     list_blue = []
+    dice_list = []
     
     
     if message.content.startswith('/que'):
@@ -49,7 +50,7 @@ async def on_message(message):
         dk = int(ms.lstrip('/'))
         dm = int(message.content.split('d')[1])
         for i in range(dk):
-            dice_list += str(random.randrange(1,m + 1)) + '  '
+            dice_list += [random.randrange(1,m + 1)]
         await client.send_message(message.channel,dice_list)
         
         
