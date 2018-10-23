@@ -17,6 +17,7 @@ async def on_message(message):
     cmd_3 = command(message.content,2)
     list_red = []
     list_blue = []
+    dice_list = []
     
     
     if message.content.startswith('/que'):
@@ -43,6 +44,15 @@ async def on_message(message):
     elif message.content.startswith('/member'):
         user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         await client.send_message(message.channel,user)
+        
+    elif '/' in message.content and 'd' in message.content and not message.content.startswith('/command'):
+        ms = message.content.split('d')[0]
+        dk = int(ms.lstrip('/'))
+        dm = int(message.content.split('d')[1])
+        for i in range(dk):
+            dice_list += [dice(dm)]
+        await client.send_message(message.channel,dice_list)
+        
         
     #elif cmd_1 == '/win':
         
@@ -75,6 +85,8 @@ def command(message,n):
     except IndexError:
         return ''
     
+def dice(m):
+    yield random.randrange(1,m + 1)
 
 # botの接続と起動
 # （tokenにはbotアカウントのアクセストークンを入れてください）
