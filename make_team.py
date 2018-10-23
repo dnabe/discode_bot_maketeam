@@ -51,7 +51,7 @@ async def on_message(message):
         dm = int(message.content.split('d')[1])
         dice_g = dice(dm)
         for i in range(dk):
-            dice_list += [dice_g]
+            dice_list += [next(dice_g)]
         await client.send_message(message.channel,dice_list)
         
         
