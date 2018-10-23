@@ -64,9 +64,11 @@ async def on_message(message):
             point_blue += int(cmd_3)
             point_dic['青チーム'] = point_blue
             
-        reply = [point_dic]
+        for i,j in point_dic.items():
+            await client.send_message(message.channel,k + ':' + str(j))
+            
         
-        await client.send_message(message.channel,reply)
+        
         
     elif message.content.startswith('/reset'):
         point_red = 0
