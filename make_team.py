@@ -64,7 +64,7 @@ async def on_message(message):
             point_blue += int(cmd_3)
             point_dic['青チーム'] = point_blue
             
-        reply = point_dic
+        reply = [point_dic]
         
         await client.send_message(message.channel,reply)
         
