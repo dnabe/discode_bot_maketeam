@@ -18,6 +18,7 @@ async def on_message(message):
     list_red = []
     list_blue = []
     dice_list = []
+    point_dic = {}
     
     
     if message.content.startswith('/que'):
@@ -54,21 +55,23 @@ async def on_message(message):
         await client.send_message(message.channel,dice_list)
         
         
-    #elif cmd_1 == '/win':
+    elif cmd_1 == '/win':
         
-        #if cmd_2 == 'red':
-            #point_red += int(cmd_3)
-        #elif cmd_2 == 'blue':
-            #point_blue += int(cmd_3)
+        if cmd_2 == 'red':
+            point_red += int(cmd_3)
+            point_dic['赤チーム'] = point_red
+        elif cmd_2 == 'blue':
+            point_blue += int(cmd_3)
+            point_dic['青チーム'] = point_blue
             
-        #reply = '赤チーム ： ' + str(point_red) + '    青チーム ： ' + str(point_blue)
+        reply = point_dic
         
-        #await client.send_message(message.channel,reply)
+        await client.send_message(message.channel,reply)
         
-    #elif message.content.startswith('/reset'):
-        #point_red = 0
-        #point_blue = 0
-        #await client.send_message(message.channel,'ポイントをリセットしたよ！')
+    elif message.content.startswith('/reset'):
+        point_red = 0
+        point_blue = 0
+        await client.send_message(message.channel,'ポイントをリセットしたよ！')
         
     elif message.content.startswith('/command'):
         await client.send_message(message.channel,'出題者決め：『/que』')
