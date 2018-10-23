@@ -19,6 +19,8 @@ async def on_message(message):
     list_blue = []
     dice_list = []
     point_dic = {}
+    point_red = -1
+    point_blue = -1
     
     
     if message.content.startswith('/que'):
@@ -65,7 +67,7 @@ async def on_message(message):
             point_dic['青チーム'] = point_blue
             
         for i,j in point_dic.items():
-            await client.send_message(message.channel,k + ':' + str(j))
+            await client.send_message(message.channel,i + ':' + str(j))
             
         
         
