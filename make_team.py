@@ -49,8 +49,9 @@ async def on_message(message):
         ms = message.content.split('d')[0]
         dk = int(ms.lstrip('/'))
         dm = int(message.content.split('d')[1])
+        dice_g = dice(dm)
         for i in range(dk):
-            dice_list += [dice(dm)]
+            dice_list += [dice_g]
         await client.send_message(message.channel,dice_list)
         
         
@@ -74,6 +75,7 @@ async def on_message(message):
         await client.send_message(message.channel,'出題者決め：『/que』')
         await client.send_message(message.channel,'チーム分け：『/team␣〇␣△』 （〇、△には人数比）')
         await client.send_message(message.channel,'ボイスチャットのメンバー表示：『/member』')
+        await client.send_message(message.channel,'ダイスを振る：『/1d6』')
         #await client.send_message(message.channel,'チームへポイントの加算：『/win␣red␣〇』 （〇は点数）')
         #await client.send_message(message.channel,'ポイントのリセット：『/reset』')
         await client.send_message(message.channel,'使用可能なコマンド確認：『/command』')
