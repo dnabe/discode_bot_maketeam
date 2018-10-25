@@ -61,10 +61,10 @@ async def on_message(message):
     #elif cmd_1 == '/win':
         
         #if cmd_2 == 'red':
-            #point_red += int(cmd_3)
+            
             #point_dic['赤チーム'] = point_red
         #elif cmd_2 == 'blue':
-            #point_blue += int(cmd_3)
+            
             #point_dic['青チーム'] = point_blue
             
         #for i,j in point_dic.items():
@@ -83,7 +83,7 @@ async def on_message(message):
         await client.send_message(message.channel,'チーム分け：『/team␣〇␣△』 （〇、△には人数）')
         await client.send_message(message.channel,'ボイスチャットのメンバー表示：『/member』')
         await client.send_message(message.channel,'ダイスを振る：『/1d6』')
-        #await client.send_message(message.channel,'チームへポイントの加算：『/win␣red␣〇』 （〇は点数）')
+        #await client.send_message(message.channel,'チームへポイントの加算：『/win␣red』')
         #await client.send_message(message.channel,'ポイントのリセット：『/reset』')
         await client.send_message(message.channel,'使用可能なコマンド確認：『/command』')
         
@@ -98,4 +98,4 @@ def command(message,n):
 
 # botの接続と起動
 # （tokenにはbotアカウントのアクセストークンを入れてください）
-client.run('NTAyNjYzMzA1NjY0NjU5NDc3.DquIqw.Y47wNQ52eGp1mIsZMhKQBu2BEno')
+client.run('NTAyNjYzMzA1NjY0NjU5NDc3.DrMHIw.UxQPCELNo3z1cjePxmkYnCBstkc')
