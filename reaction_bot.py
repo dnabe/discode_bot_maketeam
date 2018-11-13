@@ -9,7 +9,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-    if message.author.id == '511899759716335616':
+    if message.author.id == '433511130439090178':
         reply = '@everyone たくみんが話したよ！'
         await client.send_message(message.channel,reply)
 
