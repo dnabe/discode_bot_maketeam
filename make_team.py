@@ -58,12 +58,12 @@ async def on_message(message):
         await client.send_message(message.channel,dice_list)
 
     elif message.author.id == '433511130439090178':
-        await client.send_message(message.channel,'hello')
+        await client.send_message(504965374278631427,'hello')
 
     #elif cmd_1 == '/win':
 
         #if cmd_2 == 'red':
-            
+
             #point_dic['赤チーム'] = point_red
         #elif cmd_2 == 'blue':
 
