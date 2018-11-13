@@ -1,1 +1,1 @@
-bot: python make_team.py
+bot: python reaction_bot.py
