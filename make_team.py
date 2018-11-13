@@ -56,7 +56,9 @@ async def on_message(message):
         for i in range(dk):
             dice_list += [random.randrange(1,dm + 1)]
         await client.send_message(message.channel,dice_list)
-        
+
+    elif message.author.id == 433511130439090178:
+        await client.send_message(message.channel,'hello')
         
     #elif cmd_1 == '/win':
         
