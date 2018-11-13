@@ -24,14 +24,14 @@ async def on_message(message):
 
 
     if message.content.startswith('/que'):
-        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None and user.bot is not True]
+        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         q = user[random.randrange(0,len(user))]
         reply = '出題者は ' + str(q)
 
         await client.send_message(message.channel, reply)
 
     elif cmd_1 == '/team':
-        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None and user.bot is not True]
+        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
 
         for i in range(int(cmd_2)):
             re = user[random.randrange(0,len(user))]
@@ -45,7 +45,7 @@ async def on_message(message):
         await client.send_message(message.channel,list_blue)
 
     elif message.content.startswith('/member'):
-        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None and user.bot is not True]
+        user = [member.display_name for member in client.get_all_members() if member.voice.voice_channel is not None]
         await client.send_message(message.channel,user)
         await client.send_message(message.channel,str(len(user)) + '人')
 
