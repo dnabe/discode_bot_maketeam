@@ -19,9 +19,9 @@ async def on_message(message):
         #reply = '<@&458110776964808706> テスト' #テスト用
         reply = 'test' #test
 
-        if int(datetime.datetime.now().strftime('%H')) >= 13 and int(datetime.datetime.now().strftime('%H')) <= 16:
-            msg = await client.send_message(message.channel,reply)
-            time.sleep(5.0)
-            await client.delete_message(msg)
+        #if int(datetime.datetime.now().strftime('%H')) >= 13 and int(datetime.datetime.now().strftime('%H')) <= 16:
+        msg = await client.send_message(message.channel,reply)
+        time.sleep(5.0)
+        await client.delete_message(msg)
 
 client.run('NTExODk2MTE5NTY3OTc0NDAw.Dsxl7g.aFBgRs3aVBpCphX_czE30dQCOAw')
