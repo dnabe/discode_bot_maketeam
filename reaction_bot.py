@@ -12,11 +12,11 @@ async def on_ready():
 async def on_message(message):
 
 
-    #if message.author.id == '279562735635660800': #たくみんのid
-        #reply = '<@&511936816677519382> たくみんが話したよ！' #くらくらサーバ
+    if message.author.id == '279562735635660800': #たくみんのid
+        reply = '<@&511936816677519382> たくみんが話したよ！' #くらくらサーバ
 
-    if message.author.id == '433511130439090178': #鍋谷のid
-        reply = '<@&458110776964808706> テスト' #テスト用
+    #if message.author.id == '433511130439090178': #鍋谷のid
+        #reply = '<@&458110776964808706> テスト' #テスト用
         #reply = 'test' #test
 
         msg = await client.send_message(message.channel,reply)
