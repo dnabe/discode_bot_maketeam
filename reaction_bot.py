@@ -10,10 +10,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    d = datetime.datetime.now()
-    t = d.strftime('%H')
 
-    if int(t) >= 13 and int(t) <= 17:
+    if int(datetime.datetime.now().strftime('%H')) >= 13 and int(datetime.datetime.now().strftime('%H')) <= 17:
         #if message.author.id == '279562735635660800': #たくみんのid
         if message.author.id == '433511130439090178': #鍋谷のid
             reply = '<@&458110776964808706> テスト' #テスト用
